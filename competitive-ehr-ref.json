@@ -242,7 +242,7 @@
         "cerner": "confirmed — deep"
       },
       "hasRCM": false,
-      "codingAwareOnly": false,
+      "codingAwareOnly": true,
       "hasPXP": false,
       "recentFunding": {
         "note": "Microsoft subsidiary — not independently funded"
