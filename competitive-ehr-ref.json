@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastCompiled": "2026-03-22",
+    "sources": [
+      "Ambient Competitive Research wiki (last updated 2026-03-07)",
+      "Epic/MEDITECH integration guides (Google Drive)",
+      "SOWs and EHR one-pagers (Google Drive)"
+    ],
+    "rule": "Nothing inferred. If not documented, marked unknown or omitted."
+  },
+  "ehrTechnicalReference": {
+    "epic": {
+      "name": "Epic",
+      "integrationMobile": "Haiku FHIR R4 — native app launch, listed in Epic Toolbox as 'Ambient Notes'",
+      "integrationWorkstation": "Hyperspace via FDI record — embedded window (mic NOT accessible) or pop-up window (mic accessible)",
+      "noteWriteback": "SmartDataElements (SDE1) — 5 SmartSections max at go-live",
+      "schedulingInbound": "HL7 v2 SIU/ADT or FHIR",
+      "auth": "SMART on FHIR + OAuth2",
+      "fallback": "HL7 v2 ADT/ORU for Epic 2018 or API-blocked sites",
+      "keyLimits": [
+        "No SmartForms",
+        "No Flowsheets",
+        "Epic 2018 adds ~2 weeks",
+        "Commure has no direct Epic env access — customer team does all builds",
+        "FDI build required for Hyperspace"
+      ],
+      "timeline": {
+        "scribe": "6–8 weeks",
+        "scribePlusRCM": "12–16 weeks total",
+        "highComplexity": "10–14 weeks (SMART on FHIR + Hyperspace iFrame)"
+      },
+      "rcmMethod": "Selenium + API",
+      "competitiveExposure": "High — Abridge, Dragon Copilot; Epic building native ambient tool with Microsoft (early 2026)",
+      "ehrNativeThreat": {
+        "name": "Epic AI Charting (Art)",
+        "launched": "2025-02",
+        "details": "40x AI usage growth in 2025, built with Microsoft, usage-based pricing can become expensive, disjointed experience across product teams"
+      }
+    },
+    "meditech": {
+      "name": "MEDITECH",
+      "integrationExpanseV2Plus": "FHIR R4",
+      "integrationOlderExpanseMagic": "HL7 v2 via integration bridge",
+      "noteWriteback": "Colossus DOM injection — less stable than native API, IT security may reject",
+      "killShotQualifier": "Expanse vs Magic — Magic dramatically increases complexity",
+      "timeline": {
+        "expanseFHIR": "8–10 weeks",
+        "magicHL7Bridge": "12–16 weeks"
+      },
+      "rcmMethod": "Selenium",
+      "competitorPresence": {
+        "suki": "Confirmed native MEDITECH Expanse API integration — first to market",
+        "dragonCopilot": "Confirmed MEDITECH strategic development partnership",
+        "solventum": "Confirmed MEDITECH Accelerator partner as of Jan 2026"
+      }
+    },
+    "eclinicalworks": {
+      "name": "eClinicalWorks (eCW)",
+      "integration": "eCW API → SOAP Progress Note — 5 free-text fields max; HL7 SIU/ADT for scheduling",
+      "mobile": "Full validation on eCW Mobile iOS/Android",
+      "rcmMethod": "Selenium — no direct eCW API dependency",
+      "credentials": "4 eCW service accounts required (eBO + appointment + chart read/write)",
+      "killShotQualifier": "Cloud-hosted vs on-premise — on-prem = zero integration path, no workaround",
+      "timeline": {
+        "scribe": "4–6 weeks (fastest in portfolio)",
+        "fullStack": "10–14 weeks"
+      },
+      "competitorPresence": {
+        "sunoh": "Confirmed eCW-native scribe — built on top of eCW",
+        "abridge": "No confirmed eCW integration",
+        "ambience": "No confirmed eCW integration"
+      }
+    },
+    "athenahealth": {
+      "name": "athenahealth (athenaOne)",
+      "integration": "100% REST API — no HL7 at all",
+      "noteWriteback": "Up to 8 free-text fields; templates 17292 and 17293",
+      "scribeMacros": "Dot phrases supported — athena-specific feature",
+      "killShotQualifier": "2FA must be disabled on service account — non-negotiable",
+      "apiAuthorizationLag": "1–2 week processing lag",
+      "timeline": {
+        "scribe": "6–8 weeks",
+        "scribePlusRCM": "12–16 weeks total"
+      },
+      "competitorPresence": {
+        "ambience": "Confirmed on athenahealth (Midi Health partnership)",
+        "suki": "Confirmed athenahealth Preferred Partner status",
+        "ehrNative": "Athena Ambient Notes live; athenaAmbient (next-gen) in user testing Feb 2026; marketplace includes Suki, iScribe, DAX Copilot"
+      }
+    }
+  },
+  "competitors": [
+    {
+      "name": "Abridge",
+      "ehrCoverage": {
+        "epic": "confirmed — deep, native Haiku embedding",
+        "meditech": "unknown",
+        "ecw": "unknown",
+        "athenahealth": "confirmed",
+        "cerner": "unknown"
+      },
+      "hasRCM": false,
+      "hasPXP": false,
+      "recentFunding": {
+        "round": "Series E",
+        "valuation": "~$5B",
+        "date": "2025-11",
+        "totalRaised": "$450M+"
+      },
+      "headcount": 560,
+      "customerCount": "200+ enterprise",
+      "pricing": {
+        "enterprise": "~$300–400/provider/month",
+        "individual": "~$200/month"
+      },
+      "strengths": [
+        "Linked evidence (click note section to see transcript source)",
+        "Pre-visit chart prep",
+        "HCC coding assist",
+        "Prior auth (launched Aug 2025 with Highmark/AHN)",
+        "Nursing workflows (Mayo Clinic reference)",
+        "Fast off-the-shelf deployment, no custom template work needed",
+        "Deep native Epic integration"
+      ],
+      "weaknesses": [
+        "One main template and canned specialty features — limited customization",
+        "No confirmed MEDITECH or eCW integration",
+        "No RCM",
+        "No PXP",
+        "No full workflow automation beyond notes"
+      ],
+      "commureCounters": [
+        "Commure offers template customization vs Abridge's one-size approach",
+        "Commure has Ambient + RCM + PXP — Abridge is notes-only",
+        "Abridge and Epic are no longer aligned — Epic sold equity stake"
+      ],
+      "winsWhen": [
+        "Note quality is the primary evaluation criterion",
+        "Epic shops",
+        "Linked evidence needed for compliance",
+        "Specialty workflows"
+      ],
+      "losesWhen": [
+        "Price sensitivity",
+        "Non-Epic EHRs",
+        "Full workflow automation beyond notes required"
+      ],
+      "watchOutFor": "Epic now building competing native ambient tool — Abridge and Epic are no longer aligned. Abridge lowering prices recently.",
+      "confidence": "high",
+      "lastUpdated": "2026-03-07"
+    },
+    {
+      "name": "Ambience Healthcare",
+      "ehrCoverage": {
+        "epic": "confirmed",
+        "meditech": "unknown",
+        "ecw": "unknown",
+        "athenahealth": "confirmed — Midi Health partnership",
+        "cerner": "unknown"
+      },
+      "hasRCM": false,
+      "hasPXP": false,
+      "recentFunding": {
+        "round": "Series C",
+        "valuation": "$1B",
+        "amount": "$243M",
+        "date": "2025-07",
+        "totalRaised": "~$345M",
+        "notableBackers": ["OpenAI", "a16z", "Kleiner Perkins", "Optum"]
+      },
+      "headcount": 214,
+      "customerCount": "unknown",
+      "pricing": {
+        "autoScribe": "~$2,800–3,200/provider/year",
+        "fullSuite": "~$4,000–5,000/provider/year"
+      },
+      "strengths": [
+        "Best note quality and specialty customization (per internal intel)",
+        "Coding-aware documentation",
+        "Orders/workflow execution",
+        "Structured data extraction",
+        "Inpatient care (launched Nov 2025)",
+        "Patient Recap (pre-visit)",
+        "Strong coding accuracy",
+        "Cleveland Clinic win (head-to-head evaluation)"
+      ],
+      "weaknesses": [
+        "Highest price in market",
+        "Challenging to work with (per internal intel)",
+        "No confirmed MEDITECH or eCW integration",
+        "No confirmed RCM",
+        "No confirmed PXP"
+      ],
+      "commureCounters": [
+        "Commure has Ambient + RCM + PXP — Ambience is documentation + coding only",
+        "Commure forward-deployed engineering model vs Ambience being 'challenging to work with'",
+        "Price: Commure can compete on total value across Ambient + RCM + PXP"
+      ],
+      "winsWhen": [
+        "Note quality and coding accuracy are top priority",
+        "Specialty customization depth required",
+        "Budget is not the primary constraint"
+      ],
+      "losesWhen": [
+        "Price sensitivity",
+        "Non-Epic/athena EHR environments",
+        "Need for RCM or PXP alongside ambient"
+      ],
+      "watchOutFor": "Best product quality reputation. Colossus motion with integration when API not available — similar approach to Commure.",
+      "confidence": "high",
+      "lastUpdated": "2026-03-07"
+    },
+    {
+      "name": "Microsoft Dragon Copilot (Nuance DAX)",
+      "ehrCoverage": {
+        "epic": "confirmed — deep, fully embedded, GA Jan 2024",
+        "meditech": "confirmed — strategic development partnership",
+        "ecw": "confirmed",
+        "athenahealth": "confirmed",
+        "cerner": "confirmed — deep"
+      },
+      "hasRCM": false,
+      "hasPXP": false,
+      "recentFunding": {
+        "note": "Microsoft subsidiary — not independently funded"
+      },
+      "customerCount": "400+ healthcare organizations; 150+ hospitals with Epic integration",
+      "pricing": {
+        "perClinician": "~$600/month (~$7,200/year)",
+        "reseller": "Some resellers ~$369/month"
+      },
+      "strengths": [
+        "Broadest EHR coverage (Epic, MEDITECH, eCW, athena, Cerner)",
+        "Industry-leading dictation and macros (Dragon Medical One)",
+        "Microsoft/Azure enterprise footprint",
+        "Order suggestions",
+        "Clinical Q&A",
+        "Voice commands/macros",
+        "Building Epic's native ambient tool for early 2026"
+      ],
+      "weaknesses": [
+        "Highest cost (~$7,200/year per clinician)",
+        "Slower innovation pace",
+        "No RCM",
+        "No PXP"
+      ],
+      "commureCounters": [
+        "Fastest innovation and modern AI platform approach",
+        "Commure has Ambient + RCM + PXP — Dragon is ambient + dictation only",
+        "Commure forward-deployed engineering vs Microsoft enterprise sales cycle"
+      ],
+      "winsWhen": [
+        "Microsoft/Azure enterprise footprint already in place",
+        "Dictation/macro lock-in (ortho, radiology)",
+        "Broadest EHR coverage needed",
+        "Existing Dragon Medical One users"
+      ],
+      "losesWhen": [
+        "Cost is a concern",
+        "Innovation pace matters",
+        "RCM needed",
+        "PXP needed"
+      ],
+      "watchOutFor": "Building Epic's native ambient tool for early 2026 release. Deepest EHR integration footprint in market. MEDITECH strategic partnership.",
+      "confidence": "high",
+      "lastUpdated": "2026-03-07"
+    },
+    {
+      "name": "Suki",
+      "ehrCoverage": {
+        "epic": "confirmed — 'Suki Inside' natively embedded in Haiku and desktop",
+        "meditech": "confirmed — Expanse native API integration (first to market)",
+        "ecw": "unknown",
+        "athenahealth": "confirmed — Preferred Partner",
+        "cerner": "confirmed — Oracle Health"
+      },
+      "hasRCM": false,
+      "hasPXP": false,
+      "recentFunding": {
+        "round": "Series D",
+        "amount": "$70M",
+        "date": "2024-10",
+        "totalRaised": "~$165M"
+      },
+      "customerCount": "400+ organizations, 140,000+ healthcare customers worldwide",
+      "notableCustomers": "8 of 10 largest US health systems; 9 of top 10 US News-ranked hospitals",
+      "pricing": {
+        "individual": "~$199–399/month",
+        "enterprise": "custom"
+      },
+      "strengths": [
+        "Voice-first workflows (ambient + dictation first-class)",
+        "Pre-visit chart prep",
+        "HCC/ICD-10 coding",
+        "Order staging",
+        "Zoom integration",
+        "Nursing workflows",
+        "UpToDate integration (Wolters Kluwer)",
+        "First company with native MEDITECH Expanse API integration",
+        "athenahealth Preferred Partner"
+      ],
+      "weaknesses": [
+        "No confirmed RCM",
+        "No confirmed PXP",
+        "No confirmed eCW integration"
+      ],
+      "commureCounters": [
+        "Commure has Ambient + RCM + PXP — Suki is ambient + dictation",
+        "Commure has eCW integration — Suki status unknown",
+        "Commure 40M+ appointments at scale vs Suki mid-market focus"
+      ],
+      "winsWhen": [
+        "Voice-first workflows are priority",
+        "Multi-EHR environments",
+        "athenahealth shops",
+        "Mid-market"
+      ],
+      "losesWhen": [
+        "RCM or PXP needed alongside ambient",
+        "Enterprise scale required (HCA/Tenet tier)"
+      ],
+      "watchOutFor": "First to market on native MEDITECH Expanse API — a direct threat on MEDITECH deals. Strong athenahealth positioning.",
+      "confidence": "high",
+      "lastUpdated": "2026-03-07"
+    },
+    {
+      "name": "Nabla",
+      "ehrCoverage": {
+        "epic": "unknown",
+        "meditech": "unknown",
+        "ecw": "unknown",
+        "athenahealth": "unknown",
+        "cerner": "unknown"
+      },
+      "hasRCM": false,
+      "hasPXP": false,
+      "recentFunding": {
+        "round": "Series C",
+        "amount": "$70M",
+        "date": "2025-06",
+        "totalRaised": "$120M"
+      },
+      "customerCount": "150+ organizations",
+      "pricing": {
+        "freeTier": "30 consults/month",
+        "unlimited": "~$119/month"
+      },
+      "strengths": [
+        "Plug-and-play browser extension model (150+ organizations)",
+        "Rapid deployment",
+        "Lowest price point in market",
+        "Free tier for adoption",
+        "Nabla Connect API platform",
+        "3x ARR growth"
+      ],
+      "weaknesses": [
+        "No confirmed deep EHR integrations",
+        "No confirmed RCM",
+        "No confirmed PXP",
+        "SMB/mid-market focus — not enterprise"
+      ],
+      "commureCounters": [
+        "Commure has deep native EHR integrations vs browser extension overlay",
+        "Commure has Ambient + RCM + PXP — Nabla is ambient only",
+        "Enterprise scale and forward-deployed engineering"
+      ],
+      "winsWhen": [
+        "Rapid deployment needed",
+        "Price is the deciding factor",
+        "SMB/mid-market"
+      ],
+      "losesWhen": [
+        "Enterprise procurement requirements",
+        "Deep EHR integration needed",
+        "RCM or PXP required"
+      ],
+      "watchOutFor": "Low price and free tier can create bottom-up adoption that's hard to displace. Browser extension model bypasses IT procurement.",
+      "confidence": "medium",
+      "lastUpdated": "2026-03-07"
+    }
+  ],
+  "ehrNativeThreats": [
+    {
+      "name": "Epic AI Charting (Art)",
+      "ehr": "Epic",
+      "launched": "2025-02",
+      "details": "40x AI usage growth in 2025, built with Microsoft, usage-based pricing can become expensive, disjointed experience across product teams",
+      "threatLevel": "high"
+    },
+    {
+      "name": "Athena Ambient Notes",
+      "ehr": "athenahealth",
+      "status": "Live for athena customers; athenaAmbient (next-gen) in user testing Feb 2026",
+      "marketplace": ["Suki", "iScribe", "DAX Copilot"],
+      "threatLevel": "medium"
+    },
+    {
+      "name": "Oracle Clinical Digital Assistant (OCDA)",
+      "ehr": "Cerner/Oracle Health",
+      "details": "Native Cerner, blocks third-party scribes in Cerner ecosystem, reportedly high pricing, struggles in ED/hospitalist",
+      "internalIntel": "We've never run into OCDA",
+      "threatLevel": "low"
+    },
+    {
+      "name": "Solventum Fluency Align",
+      "ehr": "MEDITECH",
+      "status": "MEDITECH Accelerator partner as of Jan 2026",
+      "details": "Strong CDI/coding heritage; #1 KLAS radiology speech 2025",
+      "threatLevel": "medium"
+    },
+    {
+      "name": "Sunoh",
+      "ehr": "eClinicalWorks",
+      "details": "eCW-native, mobile-first, low-cost",
+      "threatLevel": "medium"
+    },
+    {
+      "name": "Amazon Health Connect",
+      "launched": "2026-03-05",
+      "details": "Ambient docs + scheduling agent + billing codes; Veradigm EHR partner",
+      "internalIntel": "Prior HealthScribe product considered a failure internally",
+      "threatLevel": "medium"
+    }
+  ],
+  "marketShareRanking": [
+    { "rank": 1, "name": "Dragon Copilot" },
+    { "rank": 2, "name": "Abridge" },
+    { "rank": 3, "name": "Ambience" },
+    { "rank": 4, "name": "Suki / Nabla" },
+    { "rank": 5, "name": "PLG tier (Heidi, Freed)" },
+    { "rank": "6–7", "name": "Commure Ambient" }
+  ],
+  "commureDifferentiators": [
+    "Only platform with Ambient + RCM + PXP in one layer — no competitor offers all three",
+    "40M+ appointments at deployment scale",
+    "HCA + Tenet exclusive partnerships",
+    "Augmedix acquisition — proven ambient scribe heritage",
+    "EHR breadth: 60+ integrations",
+    "Forward-deployed engineering model",
+    "Revenue cycle differentiation: coding-aware documentation, denial-aware intelligence, CDI nudges tied to billing accuracy"
+  ]
+}
