@@ -1,4 +1,4 @@
-# Competitive EHR Reference — v1.0
+# Competitive EHR Reference — v1.1
 
 > **Source:** Ambient Competitive Research wiki (last updated March 7, 2026), Epic/MEDITECH integration guides, SOWs, EHR one-pagers from Google Drive.
 > **Last compiled:** 2026-03-22
@@ -8,22 +8,61 @@
 
 ## Table of Contents
 
-1. [EHR Technical Reference](#ehr-technical-reference)
+1. [Commure Products](#commure-products)
+2. [Coding-Aware vs. RCM — Know the Difference](#coding-aware-vs-rcm--know-the-difference)
+3. [EHR Technical Reference](#ehr-technical-reference)
    - [Epic](#epic)
    - [MEDITECH](#meditech)
    - [eClinicalWorks (eCW)](#eclinicalworks-ecw)
    - [athenahealth (athenaOne)](#athenahealth-athenaone)
-2. [Competitive Intelligence — Ambient AI](#competitive-intelligence--ambient-ai)
+4. [Competitive Intelligence — Ambient AI](#competitive-intelligence--ambient-ai)
    - [Abridge](#abridge)
    - [Ambience Healthcare](#ambience-healthcare)
    - [Microsoft Dragon Copilot (Nuance DAX)](#microsoft-dragon-copilot-nuance-dax)
    - [Suki](#suki)
    - [Nabla](#nabla)
-3. [EHR-Native Threats](#ehr-native-threats)
-4. [Competitor × EHR Coverage Matrix](#competitor--ehr-coverage-matrix)
-5. [Knowns vs Unknowns](#knowns-vs-unknowns)
-6. [Market Share Ranking](#market-share-ranking)
-7. [Commure Differentiators](#commure-differentiators)
+5. [EHR-Native Threats](#ehr-native-threats)
+6. [Competitor × EHR Coverage Matrix](#competitor--ehr-coverage-matrix)
+7. [Knowns vs Unknowns](#knowns-vs-unknowns)
+8. [Market Share Ranking](#market-share-ranking)
+9. [Commure Differentiators](#commure-differentiators)
+
+---
+
+## Commure Products
+
+Commure is the only vendor that ships Ambient AI, RCM, and Patient Experience on one platform, sharing a single EHR connection. That is the structural differentiator vs every point solution in this document.
+
+| Product | What It Does |
+|---------|-------------|
+| **Ambient AI** (Commure Scribe / Augmedix) | Ambient documentation, EHR writeback, specialty templates, coding-aware note generation |
+| **RCM Platform** | Claims management, denial copilot, financial clearance, billing rules engine, patient collections (Stripe/Apple Pay), remittances, bulk resubmission |
+| **PXP** (Patient Experience Platform / Memora) | Patient engagement, messaging, post-visit follow-up, intake |
+
+All three products run on the same platform and share the same EHR connection. A customer buying Ambient gets the integration work done once — RCM and PXP layer on top without a second integration build.
+
+---
+
+## Coding-Aware vs. RCM — Know the Difference
+
+> **This distinction matters in every competitive conversation. Do not conflate the two.**
+
+**"Coding-aware documentation"** means the ambient scribe generates notes with HCC/ICD-10 suggestions embedded in the clinical note. It is a **documentation feature**. It does NOT mean the vendor manages denials, works claims, handles clearinghouse transactions, or automates RCM workflows.
+
+**Ambience, Abridge, Suki, and Nabla** all use "coding" or "revenue" language in their positioning. None of them have confirmed RCM capabilities as Commure defines it. They offer coding suggestions at the point of documentation — not claims management, denial resolution, or financial clearance.
+
+**Commure's differentiator:** Coding-aware documentation is the starting point. The RCM platform closes the loop — claims, denials, collections, financial clearance — on the same session. That is the distinction.
+
+| Capability | Coding-Aware (Competitors) | Full RCM (Commure) |
+|-----------|---------------------------|-------------------|
+| HCC/ICD-10 suggestions in note | Yes | Yes |
+| Claims submission & management | No | Yes |
+| Denial detection & copilot | No | Yes |
+| Appeal letter generation | No | Yes |
+| Clearinghouse integration | No | Yes |
+| Patient collections | No | Yes |
+| Remittance reconciliation | No | Yes |
+| Billing rules engine | No | Yes |
 
 ---
 
@@ -103,9 +142,10 @@
 | **Funding** | Series E ~$5B valuation (Nov 2025), $450M+ total raised |
 | **Headcount** | 560 employees |
 | **Customers** | 200+ enterprise; former Epic preferred partner — Epic sold equity stake in 2025 |
-| **Pricing** | ~$300–400/provider/month enterprise; ~$200/month individual |
+| **Pricing** | See internal pricing documentation. |
 | **EHR coverage** | Epic (deep, native Haiku embedding); athenahealth (confirmed); MEDITECH: 🔍 Unknown — not documented; eCW: 🔍 Unknown — not documented |
 | **Key features** | Linked evidence (click note section → transcript source), pre-visit chart prep, HCC coding assist, prior auth (launched Aug 2025 w/ Highmark/AHN), nursing workflows (Mayo Clinic reference) |
+| **Coding-aware** | Yes — HCC coding suggestions in documentation. This is NOT RCM. |
 | **Wins when** | Note quality, Epic shops, linked evidence for compliance, specialty workflows |
 | **Loses when** | Price sensitivity, non-Epic EHRs, full workflow automation beyond notes |
 | **Internal intel** | Lowering price recently; fast off-the-shelf deployment with no custom template work needed; "one main template and canned specialty features" vs Commure customization |
@@ -122,7 +162,8 @@
 | **Notable win** | Cleveland Clinic (head-to-head evaluation) |
 | **EHR coverage** | Epic (confirmed); athenahealth (confirmed — Midi Health partnership); MEDITECH: 🔍 Unknown — not documented; eCW: 🔍 Unknown — not documented |
 | **Key features** | AutoScribe, Patient Recap (pre-visit), coding-aware documentation, orders/workflow execution, structured data extraction, inpatient care (launched Nov 2025) |
-| **Pricing** | AutoScribe ~$2,800–3,200/provider/year; Full suite ~$4,000–5,000/provider/year |
+| **Pricing** | See internal pricing documentation. |
+| **Coding-aware** | Yes — coding-aware documentation with strong accuracy. This is NOT RCM. |
 | **Internal intel** | "Best product, highest price, colossus motion with integration when API not available, challenging to work with"; best note quality and specialty customization; coding accuracy strong |
 
 ---
@@ -134,7 +175,7 @@
 | **Scale** | 400+ healthcare organizations; 150+ hospitals with Epic integration |
 | **EHR coverage** | Epic (deep, fully embedded — GA Jan 2024); MEDITECH (strategic development partnership confirmed); eCW (confirmed); athenahealth (confirmed); Cerner (deep) |
 | **Epic AI role** | Building Epic's native ambient tool for early 2026 release |
-| **Pricing** | ~$600/clinician/month (~$7,200/year); some resellers ~$369/month |
+| **Pricing** | See internal pricing documentation. |
 | **Key features** | Ambient + dictation (Dragon Medical One), order suggestions, clinical Q&A, voice commands/macros |
 | **Wins when** | Microsoft/Azure enterprise footprint, dictation/macro lock-in, ortho/radiology specialties, broadest EHR coverage |
 | **Loses when** | Cost, innovation pace, no RCM, no PXP |
@@ -151,7 +192,8 @@
 | **Funding** | Series D $70M (Oct 2024), ~$165M total |
 | **EHR coverage** | Epic (confirmed — "Suki Inside" natively embedded in Haiku and desktop); MEDITECH Expanse (confirmed — first company with direct native API integration); athenahealth (Preferred Partner); Oracle Health (confirmed); eCW: 🔍 Unknown — not documented |
 | **Key features** | Ambient + dictation (first-class), pre-visit chart prep, HCC/ICD-10 coding, order staging, Zoom integration, nursing workflows, UpToDate integration (Wolters Kluwer) |
-| **Pricing** | ~$199–399/month individual; enterprise custom |
+| **Pricing** | See internal pricing documentation. |
+| **Coding-aware** | Yes — HCC/ICD-10 coding in documentation. This is NOT RCM. |
 | **Wins when** | Voice-first workflows, multi-EHR environments, athenahealth, mid-market |
 
 ---
@@ -163,7 +205,8 @@
 | **Funding** | Series C $70M (June 2025), $120M total; 3x ARR growth |
 | **EHR coverage** | 150+ organizations via plug-and-play browser extension model; Greenway Next Gen, Navina (partnerships); Epic: 🔍 Unknown — not documented; MEDITECH: 🔍 Unknown — not documented; eCW: 🔍 Unknown — not documented; athenahealth: 🔍 Unknown — not documented |
 | **Key features** | Ambient + dictation, patient briefs, ICD-10/HCC suggestions, Nabla Connect API platform |
-| **Pricing** | Free tier (30 consults/month); ~$119/month unlimited |
+| **Pricing** | See internal pricing documentation. |
+| **Coding-aware** | Yes — ICD-10/HCC suggestions. This is NOT RCM. |
 | **Wins when** | Rapid deployment, price, SMB/mid-market |
 
 ---
@@ -205,11 +248,11 @@
 - ✅ athenahealth: 100% REST API, dot phrases, 2FA kill shot, API auth lag
 
 **Competitor Positioning:**
-- ✅ Abridge: pricing, Epic depth, linked evidence, recent price drops, Epic relationship fracture
-- ✅ Ambience: pricing, Cleveland Clinic win, coding accuracy, "best product, highest price"
-- ✅ Dragon Copilot: broadest EHR coverage, pricing, dictation lock-in, building Epic's native tool
+- ✅ Abridge: Epic depth, linked evidence, recent price drops, Epic relationship fracture
+- ✅ Ambience: Cleveland Clinic win, coding accuracy, "best product, highest price"
+- ✅ Dragon Copilot: broadest EHR coverage, dictation lock-in, building Epic's native tool
 - ✅ Suki: MEDITECH first-to-market, athena preferred partner, voice-first positioning
-- ✅ Nabla: browser extension model, free tier, SMB focus
+- ✅ Nabla: browser extension model, SMB focus
 
 **Market Dynamics:**
 - ✅ Epic building native ambient with Microsoft (early 2026)
@@ -230,16 +273,8 @@
 - 🔍 Nabla on all major EHRs (Epic, MEDITECH, eCW, athena) — not documented
 
 **Competitor Product Gaps:**
-- 🔍 Abridge RCM capabilities — not documented (noted they lack "full workflow automation beyond notes")
-- 🔍 Ambience RCM capabilities — not documented
-- 🔍 Suki RCM capabilities — not documented
-- 🔍 Nabla RCM capabilities — not documented
+- 🔍 All competitors: confirmed RCM capabilities — none documented (all are coding-aware only)
 - 🔍 All competitors: PXP capabilities — not documented for any competitor
-
-**Pricing Gaps:**
-- 🔍 Suki enterprise pricing — listed as "custom"
-- 🔍 Nabla enterprise pricing — not documented
-- 🔍 Ambience enterprise discount tiers — not documented
 
 **Market Intel Gaps:**
 - 🔍 Dragon Copilot total customer count (beyond "400+ organizations") — not documented

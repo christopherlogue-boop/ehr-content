@@ -1,13 +1,38 @@
 {
   "meta": {
-    "version": "1.0",
+    "version": "1.1",
     "lastCompiled": "2026-03-22",
     "sources": [
       "Ambient Competitive Research wiki (last updated 2026-03-07)",
       "Epic/MEDITECH integration guides (Google Drive)",
       "SOWs and EHR one-pagers (Google Drive)"
     ],
-    "rule": "Nothing inferred. If not documented, marked unknown or omitted."
+    "rule": "Nothing inferred. If not documented, marked unknown or omitted.",
+    "pricingPolicy": "All pricing figures removed. See internal pricing documentation for current figures."
+  },
+  "commureProducts": {
+    "platformNote": "Only vendor shipping Ambient AI, RCM, and PXP on one platform sharing a single EHR connection.",
+    "products": [
+      {
+        "name": "Ambient AI",
+        "aliases": ["Commure Scribe", "Augmedix"],
+        "capabilities": ["Ambient documentation", "EHR writeback", "Specialty templates", "Coding-aware note generation"]
+      },
+      {
+        "name": "RCM Platform",
+        "capabilities": ["Claims management", "Denial copilot", "Financial clearance", "Billing rules engine", "Patient collections (Stripe/Apple Pay)", "Remittances", "Bulk resubmission"]
+      },
+      {
+        "name": "PXP",
+        "aliases": ["Patient Experience Platform", "Memora"],
+        "capabilities": ["Patient engagement", "Messaging", "Post-visit follow-up", "Intake"]
+      }
+    ]
+  },
+  "codingAwareVsRCM": {
+    "summary": "Coding-aware documentation means the scribe generates notes with HCC/ICD-10 suggestions. It is a documentation feature. It does NOT mean the vendor manages denials, works claims, handles clearinghouse transactions, or automates RCM workflows.",
+    "competitorsCodingAwareOnly": ["Abridge", "Ambience Healthcare", "Suki", "Nabla"],
+    "commureDifference": "Coding-aware documentation is the starting point. The RCM platform closes the loop — claims, denials, collections, financial clearance — on the same session."
   },
   "ehrTechnicalReference": {
     "epic": {
@@ -101,6 +126,7 @@
         "cerner": "unknown"
       },
       "hasRCM": false,
+      "codingAwareOnly": true,
       "hasPXP": false,
       "recentFunding": {
         "round": "Series E",
@@ -110,10 +136,7 @@
       },
       "headcount": 560,
       "customerCount": "200+ enterprise",
-      "pricing": {
-        "enterprise": "~$300–400/provider/month",
-        "individual": "~$200/month"
-      },
+      "pricing": "See internal pricing documentation.",
       "strengths": [
         "Linked evidence (click note section to see transcript source)",
         "Pre-visit chart prep",
@@ -126,7 +149,7 @@
       "weaknesses": [
         "One main template and canned specialty features — limited customization",
         "No confirmed MEDITECH or eCW integration",
-        "No RCM",
+        "No RCM — coding-aware only",
         "No PXP",
         "No full workflow automation beyond notes"
       ],
@@ -160,6 +183,7 @@
         "cerner": "unknown"
       },
       "hasRCM": false,
+      "codingAwareOnly": true,
       "hasPXP": false,
       "recentFunding": {
         "round": "Series C",
@@ -171,10 +195,7 @@
       },
       "headcount": 214,
       "customerCount": "unknown",
-      "pricing": {
-        "autoScribe": "~$2,800–3,200/provider/year",
-        "fullSuite": "~$4,000–5,000/provider/year"
-      },
+      "pricing": "See internal pricing documentation.",
       "strengths": [
         "Best note quality and specialty customization (per internal intel)",
         "Coding-aware documentation",
@@ -189,7 +210,7 @@
         "Highest price in market",
         "Challenging to work with (per internal intel)",
         "No confirmed MEDITECH or eCW integration",
-        "No confirmed RCM",
+        "No confirmed RCM — coding-aware only",
         "No confirmed PXP"
       ],
       "commureCounters": [
@@ -221,15 +242,13 @@
         "cerner": "confirmed — deep"
       },
       "hasRCM": false,
+      "codingAwareOnly": false,
       "hasPXP": false,
       "recentFunding": {
         "note": "Microsoft subsidiary — not independently funded"
       },
       "customerCount": "400+ healthcare organizations; 150+ hospitals with Epic integration",
-      "pricing": {
-        "perClinician": "~$600/month (~$7,200/year)",
-        "reseller": "Some resellers ~$369/month"
-      },
+      "pricing": "See internal pricing documentation.",
       "strengths": [
         "Broadest EHR coverage (Epic, MEDITECH, eCW, athena, Cerner)",
         "Industry-leading dictation and macros (Dragon Medical One)",
@@ -240,7 +259,7 @@
         "Building Epic's native ambient tool for early 2026"
       ],
       "weaknesses": [
-        "Highest cost (~$7,200/year per clinician)",
+        "Highest cost in market",
         "Slower innovation pace",
         "No RCM",
         "No PXP"
@@ -276,6 +295,7 @@
         "cerner": "confirmed — Oracle Health"
       },
       "hasRCM": false,
+      "codingAwareOnly": true,
       "hasPXP": false,
       "recentFunding": {
         "round": "Series D",
@@ -285,10 +305,7 @@
       },
       "customerCount": "400+ organizations, 140,000+ healthcare customers worldwide",
       "notableCustomers": "8 of 10 largest US health systems; 9 of top 10 US News-ranked hospitals",
-      "pricing": {
-        "individual": "~$199–399/month",
-        "enterprise": "custom"
-      },
+      "pricing": "See internal pricing documentation.",
       "strengths": [
         "Voice-first workflows (ambient + dictation first-class)",
         "Pre-visit chart prep",
@@ -301,7 +318,7 @@
         "athenahealth Preferred Partner"
       ],
       "weaknesses": [
-        "No confirmed RCM",
+        "No confirmed RCM — coding-aware only",
         "No confirmed PXP",
         "No confirmed eCW integration"
       ],
@@ -334,6 +351,7 @@
         "cerner": "unknown"
       },
       "hasRCM": false,
+      "codingAwareOnly": true,
       "hasPXP": false,
       "recentFunding": {
         "round": "Series C",
@@ -342,10 +360,7 @@
         "totalRaised": "$120M"
       },
       "customerCount": "150+ organizations",
-      "pricing": {
-        "freeTier": "30 consults/month",
-        "unlimited": "~$119/month"
-      },
+      "pricing": "See internal pricing documentation.",
       "strengths": [
         "Plug-and-play browser extension model (150+ organizations)",
         "Rapid deployment",
@@ -356,7 +371,7 @@
       ],
       "weaknesses": [
         "No confirmed deep EHR integrations",
-        "No confirmed RCM",
+        "No confirmed RCM — coding-aware only",
         "No confirmed PXP",
         "SMB/mid-market focus — not enterprise"
       ],
