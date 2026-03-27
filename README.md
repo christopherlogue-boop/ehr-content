@@ -20,3 +20,4 @@ No build step. No deploy. Commit = live.
 | `ehr-master.csv` | Master EHR reference — integration status, timelines, field mappings, blockers, pivot paths, and SE guidance for every supported EHR |
 | `competitive-ehr-ref.md` | Competitive intel doc — Abridge, Ambience, Dragon Copilot, Suki, Nabla, plus EHR-native threats and coverage matrix |
 | `competitive-ehr-ref.json` | Same competitive intel in JSON format for programmatic consumption by SE TechGuide |
+| `demolft-content.csv` | **Superseded** — demo content catalog moved to [`se-demo-content/assets/demolft-catalog.json`](https://github.com/christopherlogue-boop/se-demo-content/blob/main/assets/demolft-catalog.json). 137 tagged assets with product / ehr / specialty / audience / content_type fields. Raw URL: `https://raw.githubusercontent.com/christopherlogue-boop/se-demo-content/main/assets/demolft-catalog.json` |
